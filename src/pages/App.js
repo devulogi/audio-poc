@@ -42,16 +42,16 @@ function App() {
     mr.onstop = function (e) {
       console.log("data available after MediaRecorder.stop() called.");
 
-      // const clipName = prompt(
-      //   "Enter a name for your sound clip?",
-      //   "My unnamed clip"
-      // );
+      const clipName = prompt(
+        "Enter a name for your sound clip?",
+        "My unnamed clip"
+      );
 
-      // if (clipName === null) {
-      //   setAudioClipLabel("My unnamed clip");
-      // } else {
-      //   setAudioClipLabel(clipName);
-      // }
+      if (clipName === null) {
+        setAudioClipLabel("My unnamed clip");
+      } else {
+        setAudioClipLabel(clipName);
+      }
 
       const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
       chunks = [];
